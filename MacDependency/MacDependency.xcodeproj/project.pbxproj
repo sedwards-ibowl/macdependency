@@ -104,6 +104,7 @@
 		8EFDEF9210100F1700E4D54D /* VersionFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionFormatter.m; sourceTree = "<group>"; wrapsLines = 0; };
 		9F00000120241201DEADBEEF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9F00000220241201DEADBEEF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9F00000420241202DEADBEEF /* MacDependency.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacDependency.entitlements; sourceTree = "<group>"; };
 		ADCDF191276D87BD002476ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		ADCDF192276D87BD002476ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDocument.xib; sourceTree = "<group>"; };
 		ADCDF194276D87BF002476ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -217,6 +218,7 @@
 				8E131503100F7C3C00367510 /* MainMenu.xib */,
 				8E131505100F7C3C00367510 /* MyDocument.xib */,
 				8E1314FD100F7C1D00367510 /* Info.plist */,
+				9F00000420241202DEADBEEF /* MacDependency.entitlements */,
 				8E1315C3100F8F1400367510 /* Localizable.strings */,
 			);
 			name = Resources;
@@ -409,6 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = MacDependency.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
@@ -432,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = MacDependency.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;

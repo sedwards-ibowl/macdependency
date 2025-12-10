@@ -43,5 +43,9 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>MacDependency needs to access system files to analyze Mach-O binaries and their dependencies.</string>
+	<key>NSSystemAdministrationUsageDescription</key>
+	<string>MacDependency requires access to system libraries and frameworks to display dependency information.</string>
 </dict>
 </plist>

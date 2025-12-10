@@ -42,6 +42,22 @@ cd /Applications
 MacDependency.app/Contents/MacOS/MacDependency Safari.app
 ```
 
+### Accessing System Files
+
+To analyze system frameworks and libraries (e.g., `/System/Library/Frameworks/*` or `/usr/lib/*`), you need to grant MacDependency **Full Disk Access**:
+
+1. Open **System Settings** (or System Preferences)
+2. Go to **Privacy & Security** → **Full Disk Access**
+3. Click the **+** button and add **MacDependency.app**
+4. Restart MacDependency
+
+Without Full Disk Access, you'll see errors like:
+```
+ERROR: Couldn't open file '/System/Library/Frameworks/Cocoa.framework/...'
+```
+
+This is due to macOS System Integrity Protection (SIP), which restricts access to system files for security.
+
 ## Building
 
 ### Requirements
