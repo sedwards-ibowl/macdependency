@@ -30,6 +30,7 @@
 		8ED4567B10516D6200FAC99F /* MyDocumentWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4567A10516D6200FAC99F /* MyDocumentWindow.m */; };
 		8EFDEF7A101007B300E4D54D /* ConversionStdString.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDEF79101007B300E4D54D /* ConversionStdString.mm */; };
 		8EFDEF9310100F1700E4D54D /* VersionFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDEF9210100F1700E4D54D /* VersionFormatter.m */; };
+		9F00000320241201DEADBEEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F00000220241201DEADBEEF /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		8EFDEF79101007B300E4D54D /* ConversionStdString.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ConversionStdString.mm; sourceTree = "<group>"; wrapsLines = 0; };
 		8EFDEF9110100F1700E4D54D /* VersionFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionFormatter.h; sourceTree = "<group>"; wrapsLines = 0; };
 		8EFDEF9210100F1700E4D54D /* VersionFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionFormatter.m; sourceTree = "<group>"; wrapsLines = 0; };
+		9F00000120241201DEADBEEF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F00000220241201DEADBEEF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ADCDF191276D87BD002476ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		ADCDF192276D87BD002476ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDocument.xib; sourceTree = "<group>"; };
 		ADCDF194276D87BF002476ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9F00000120241201DEADBEEF /* AppDelegate.h */,
+				9F00000220241201DEADBEEF /* AppDelegate.m */,
 				8ECFE3441061192D00685EDF /* PrioritySplitViewDelegate.h */,
 				8ECFE3451061192D00685EDF /* PrioritySplitViewDelegate.m */,
 				8EC4F15E10400F02001F9FB8 /* ArchitecturesController.h */,
@@ -327,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F00000320241201DEADBEEF /* AppDelegate.m in Sources */,
 				8ED32F48100B68FF00EBF623 /* MachOModel.mm in Sources */,
 				8ED330CE100BD19800EBF623 /* SymbolTableEntryModel.mm in Sources */,
 				8E1314FA100F7BFC00367510 /* MyDocument.mm in Sources */,

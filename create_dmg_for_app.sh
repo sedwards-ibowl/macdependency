@@ -35,7 +35,7 @@ rsync -av --links "$APP_PATH" "$TEMP_DIR"
 rsync -av --links "$SRC_FOLDER" "$TEMP_DIR/source"
 
 # Create the DMG file
-hdiutil create -volname $VOL_NAME -srcfolder $TEMP_DIR -ov -format UDZO $DMG_NAME
+hdiutil create -volname "$VOL_NAME" -srcfolder "$TEMP_DIR" -ov -format UDZO "$DMG_NAME"
 
 # Clean up the temporary directory
 rm -rf "$TEMP_DIR"
