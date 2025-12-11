@@ -4,10 +4,17 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      # https://github.com/mxcl/xcodebuild
-      - uses: mxcl/xcodebuild@v1
+      - uses: actions/checkout@v4
         with:
-          platform: macOS
-          working-directory: MacDependency
-          action: build # default = `test`
+          submodules: true
+
+      - name: Build MacDependency
+        run: |
+          cd MacDependency
+          xcodebuild -project MacDependency.xcodeproj \
+            -scheme MacDependency \
+            -configuration Release \
+            CODE_SIGN_IDENTITY="-" \
+            AD_HOC_CODE_SIGNING_ALLOWED=YES \
+            ONLY_ACTIVE_ARCH=YES \
+            build
