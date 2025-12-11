@@ -42,21 +42,45 @@ cd /Applications
 MacDependency.app/Contents/MacOS/MacDependency Safari.app
 ```
 
-### Accessing System Files
+### Known Limitations: System Libraries
 
-To analyze system frameworks and libraries (e.g., `/System/Library/Frameworks/*` or `/usr/lib/*`), you need to grant MacDependency **Full Disk Access**:
+**Important**: On macOS 11 (Big Sur) and later, system frameworks and libraries are **not available as individual files**. They are stored in a prebuilt dyld shared cache for performance.
 
-1. Open **System Settings** (or System Preferences)
-2. Go to **Privacy & Security** → **Full Disk Access**
-3. Click the **+** button and add **MacDependency.app**
-4. Restart MacDependency
-
-Without Full Disk Access, you'll see errors like:
+If you try to analyze system files, you'll see errors like:
 ```
-ERROR: Couldn't open file '/System/Library/Frameworks/Cocoa.framework/...'
+ERROR: Couldn't open file '/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa'
+ERROR: Couldn't open file '/usr/lib/libobjc.A.dylib'
 ```
 
-This is due to macOS System Integrity Protection (SIP), which restricts access to system files for security.
+**This is expected behavior** - these files literally don't exist on disk anymore.
+
+#### What You Can Analyze
+
+✅ **User Applications**: `/Applications/*.app`
+✅ **Third-party binaries**: Any non-system executables
+✅ **Your own compiled binaries**: Custom built applications
+✅ **Older macOS system copies**: If you have pre-Big Sur system libraries
+
+❌ **System frameworks**: `/System/Library/Frameworks/*` (cached)
+❌ **System libraries**: `/usr/lib/*` (cached)
+
+#### Workaround for System Libraries
+
+To analyze system libraries, you would need to:
+1. Extract them from the dyld shared cache at `/System/Volumes/Preboot/Cryptexes/OS/System/Library/dyld/*`
+2. Use Apple's `dyld_shared_cache_util` tool to extract individual libraries
+3. Then analyze the extracted files with MacDependency
+
+Example:
+```bash
+# Extract libraries from shared cache (requires Full Disk Access)
+# This is an advanced operation
+dyld_shared_cache_util -extract /tmp/extracted \
+  /System/Volumes/Preboot/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_arm64e
+
+# Then analyze the extracted libraries
+MacDependency.app/Contents/MacOS/MacDependency /tmp/extracted/usr/lib/libobjc.A.dylib
+```
 
 ## Building
 
